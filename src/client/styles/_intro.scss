@@ -1,0 +1,113 @@
+@mixin animation($name, $time) {
+  -webkit-animation: $name $time; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: $name $time; /* Firefox < 16 */
+  -ms-animation: $name $time; /* Internet Explorer */
+  -o-animation: $name $time; /* Opera < 12.1 */
+  animation: $name $time;
+}
+
+@mixin keyframes($name, $params1, $params2) {
+  @keyframes #{$name} {
+    from {
+      @each $property, $value in $params1 {
+        #{$property}: $value;
+      }
+    }
+    to {
+      @each $property, $value in $params2 {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes #{$name} {
+    from {
+      @each $property, $value in $params1 {
+        #{$property}: $value;
+      }
+    }
+    to {
+      @each $property, $value in $params2 {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes #{$name} {
+    from {
+      @each $property, $value in $params1 {
+        #{$property}: $value;
+      }
+    }
+    to {
+      @each $property, $value in $params2 {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  /* Internet Explorer */
+  @-ms-keyframes #{$name} {
+    from {
+      @each $property, $value in $params1 {
+        #{$property}: $value;
+      }
+    }
+    to {
+      @each $property, $value in $params2 {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  /* Opera < 12.1 */
+  @-o-keyframes #{$name} {
+    from {
+      @each $property, $value in $params1 {
+        #{$property}: $value;
+      }
+    }
+    to {
+      @each $property, $value in $params2 {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+header.fade-in,
+main.fade-in {
+  @include animation(translate-fadein, 2s);
+}
+
+#wrapper {
+  @include animation(fadein, 3s);
+}
+
+@include keyframes(
+  fadein,
+  (
+    opacity: 0,
+  ),
+  (
+    opacity: 1,
+  )
+);
+
+@include keyframes(
+  translate-fadein,
+  (
+    opacity: 0,
+    transform: translateY(2rem),
+  ),
+  (
+    opacity: 1,
+    transform: translateY(0px),
+  )
+);
+
+.visible {
+  visibility: visible !important;
+}

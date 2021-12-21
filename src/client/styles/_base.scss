@@ -1,0 +1,152 @@
+* {
+  line-height: 2;
+  font-size: $normal-font-size;
+  scroll-behavior: smooth;
+  text-align: center;
+  font-weight: 500;
+  font-family: font-text;
+}
+
+textarea {
+  resize: none;
+}
+
+a {
+  color: $font-color;
+  /* unvisited link */
+  &:link {
+    text-decoration: none;
+  }
+
+  /* visited link */
+  &:visited {
+    text-decoration: none;
+  }
+
+  /* mouse over link */
+  &:hover {
+    text-decoration: none;
+  }
+
+  /* selected link */
+  &:active {
+    text-decoration: none;
+  }
+}
+
+//Headings
+h1,
+h2,
+h3 {
+  &.lg-heading {
+    font-size: $big-font-size;
+  }
+
+  &.md-heading {
+    font-size: $medium-font-size;
+  }
+
+  &.sm-heading {
+    font-size: $heading-font-size;
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+  }
+}
+
+p {
+  text-align: justify;
+  margin: 0 0 1rem 0;
+}
+
+header {
+  width: 100%;
+
+  &.major {
+    > .title {
+      display: block;
+      position: relative;
+    }
+
+    > .title:before {
+      left: 0;
+    }
+
+    > .title:after {
+      right: 0;
+    }
+
+    > .title:before,
+    > .title:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: calc(50% - 6rem);
+      border-top: solid 2px $border-color-light;
+    }
+
+    > h2 {
+      font-size: 2rem;
+      line-height: 1.1;
+      margin: 0 0 2rem 0;
+    }
+  }
+}
+
+.button,
+input[type='submit'] {
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.075em;
+  height: 3rem;
+  width: 8rem;
+  line-height: 3rem;
+  padding: 0 2rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px $font-color-dark-secondary;
+  color: $font-color-dark-secondary !important;
+
+  &:hover {
+    box-shadow: inset 0 0 0 2px $accent-color;
+    color: $accent-color !important;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+      color 0.2s ease-in-out;
+  }
+}
+
+.icons {
+  margin: 1rem auto 0;
+
+  a {
+    padding: 0.4rem;
+    color: $clr-white;
+
+    &:hover {
+      color: $secondary-color !important;
+      @include easeOut();
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  main {
+    max-width: 1150px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  * {
+    line-height: 1.5;
+  }
+
+  main {
+    width: 100%;
+  }
+}

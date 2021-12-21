@@ -1,0 +1,118 @@
+footer {
+  object {
+    margin-left: 0.5rem;
+    height: 1rem;
+    pointer-events: none;
+  }
+
+  cursor: default;
+  position: relative;
+  margin: 0 auto;
+  width: calc(100% - 4rem);
+  max-width: 72rem;
+
+  header {
+    display: block;
+    padding: 3rem 0 1rem;
+  }
+
+  > section {
+    background-color: $background-color-grey-secondary;
+    color: $font-color-light;
+    flex-basis: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0rem 4rem 2rem 4rem;
+    border-radius: 0 0 16px 16px;
+  }
+
+  form label,
+  h3,
+  p {
+    font-size: 0.8rem;
+  }
+}
+
+#copyright {
+  color: $footer-grey;
+  cursor: default;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 72rem;
+  z-index: 2;
+
+  > section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.15rem 4rem;
+    margin: 0 auto;
+
+    ul {
+      cursor: default;
+      list-style: none;
+      padding-left: 1rem;
+
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+
+        &:nth-child(odd) {
+          padding-right: 0.5rem;
+        }
+
+        .icon {
+          color: $footer-grey;
+          width: 1.75rem;
+          height: 1.75rem;
+          line-height: 1.75rem;
+          display: inline-block;
+          text-align: center;
+          border-radius: 100%;
+          border: solid 2px $footer-grey;
+          font-size: 1rem;
+          padding: 0;
+
+          &:hover {
+            border-color: $secondary-color;
+            color: $secondary-color !important;
+            @include easeOut();
+          }
+        }
+      }
+    }
+
+    > * {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    width: 100%;
+
+    header {
+      padding: 1rem 0 0.5rem;
+    }
+
+    > section {
+      padding: 1rem;
+      border-radius: 0 !important;
+    }
+  }
+
+  #copyright > section {
+    flex-direction: column;
+    padding: 2.15rem 2rem;
+
+    ul {
+      padding: 1rem 0 0;
+    }
+  }
+}

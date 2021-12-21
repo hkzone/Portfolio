@@ -1,0 +1,132 @@
+/* Form */
+
+form {
+  margin: 0 0 2rem 0;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  > .fields {
+    > div {
+      flex-basis: 50%;
+    }
+
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    width: calc(100% + 3rem);
+    margin: -1.5rem 0 2rem -1.5rem;
+
+    > .split {
+      flex-basis: 50%;
+      padding: 0;
+
+      > .field {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      #content {
+        height: 100%;
+      }
+    }
+
+    * .field {
+      flex-shrink: 0;
+      padding: 1.5rem 0 0 1.5rem;
+      width: calc(100% - 1.5rem);
+    }
+
+    > .send {
+      display: flex;
+      flex-basis: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+
+      > * {
+        margin: 1rem 1.5rem 0.5rem;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 3rem;
+      }
+    }
+  }
+
+  label {
+    display: block;
+    line-height: 1.5;
+    letter-spacing: 0.075em;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin: 0 0 0.75rem 0;
+  }
+
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  textarea {
+    appearance: none;
+    background: transparent;
+    border-radius: 0;
+    border: solid 2px;
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0 1rem;
+    text-decoration: none;
+    width: 100%;
+    height: 3rem;
+    border-color: $border-color;
+
+    &:invalid {
+      box-shadow: none;
+    }
+
+    &:focus {
+      border-color: $accent-color !important;
+    }
+  }
+
+  textarea {
+    padding: 0.75rem 1rem;
+  }
+
+  ::-webkit-input-placeholder {
+    opacity: 1;
+  }
+
+  :-moz-placeholder {
+    opacity: 1;
+  }
+
+  ::-moz-placeholder {
+    opacity: 1;
+  }
+
+  :-ms-input-placeholder {
+    opacity: 1;
+  }
+
+  label {
+    color: #717981;
+  }
+
+  input[type='submit'] {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px $argent-gray;
+    color: $argent-gray !important;
+    border: none;
+    width: 10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  form > .fields > div,
+  .split {
+    flex-basis: 100% !important;
+  }
+}
