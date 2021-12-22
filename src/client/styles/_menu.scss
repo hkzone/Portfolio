@@ -1,6 +1,19 @@
 #navbar {
-  z-index: 9999;
+  z-index: 99999;
+  max-width: 72rem;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
 }
+
+.nav-alternate {
+  // color: $font-color-dark !important;
+  background-color: $menu-alternate-bg !important;
+  // backdrop-filter: blur(5px) !important;
+  @include easeOut();
+}
+
 .navbar {
   padding: 0 2rem 0 2rem;
   background: transparent;
@@ -9,6 +22,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include easeOut();
 
   // padding: 0 20px 0 10px;
 
@@ -18,14 +32,12 @@
     color: $clr-white;
     letter-spacing: -0.11em;
 
-    padding: 5px 10px;
-
     .branding-outer {
       @include easeOut();
     }
 
     .branding-inner {
-      padding: 5px;
+      padding: 0 5px;
 
       > span {
         background-color: $secondary-color;
@@ -46,8 +58,8 @@
     .nav-item {
       &:nth-last-child(-n + 1) {
         a {
-          box-shadow: 2px 3px 5px 1px rgb(225 225 225 / 20%);
-          border: $clr-white solid 1px;
+          box-shadow: 2px 3px 5px 1px rgb(225 225 225 / 15%);
+          border: $color-off-white solid 1px;
           padding: 3px 7px;
 
           &:hover {
@@ -58,14 +70,11 @@
     }
 
     .nav-link {
-      color: $clr-white;
+      color: $color-off-white;
       @include easeOut();
 
       &:hover {
         color: $secondary-color;
-      }
-      &:nth-child(-n + 0) {
-        border: $clr-white solid 1px;
       }
     }
   }

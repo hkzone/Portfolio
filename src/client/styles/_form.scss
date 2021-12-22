@@ -65,10 +65,9 @@ form {
     margin: 0 0 0.75rem 0;
   }
 
-  input[type='text'],
-  input[type='password'],
-  input[type='email'],
+  input,
   textarea {
+    text-align: left;
     appearance: none;
     background: transparent;
     border-radius: 0;

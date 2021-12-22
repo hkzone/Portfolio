@@ -6,7 +6,7 @@ const Response = (code, data) => ({
   headers: {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Methods': '*',
-    'Access-Control-Allow-Origin': 'process.env.DOMAIN',
+    'Access-Control-Allow-Origin': process.env.DOMAIN,
   },
   statusCode: code,
   body: JSON.stringify(data),
@@ -14,7 +14,6 @@ const Response = (code, data) => ({
 
 module.exports.send = async (event) => {
   const { email, name, content } = JSON.parse(event.body);
-
   if (!email || !name || !content) {
     return Response(400, {
       message: 'email, name, content  are all required in the body',

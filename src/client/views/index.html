@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Portfolio</title>
+	<title>Vlasyuk Vitaliy's Portfolio</title>
 </head>
 
 <body style="visibility: hidden">
@@ -42,15 +42,21 @@
 				</div>
 			</nav>
 		</header>
+		
 		<main>
+			
 			<div id="home">
-				<section class="show">
-					<h1 class="lg-heading  rellax" data-rellax-speed="-10">
+				
+				<section class="show rellax" data-rellax-speed="-8" data-rellax-xs-speed="-3" data-rellax-mobile-speed="-4"
+  data-rellax-tablet-speed="-5"
+  data-rellax-desktop-speed="-9">
+					 <h1 id="title" class="lg-heading" > <!--rellax" data-rellax-speed="-7 -->
 						Vitaliy <span class="text-secondary">Vlasyuk</span>
 					</h1>
-					<div class="word-container">
+					<div class="word-container "> <!-- 
+						rellax" data-rellax-speed="-6 -->
 						<div class="upper-word">
-							<h2 class="rellax" data-rellax-speed="-9">
+							<h2>
 								I'm a full-stack web-developer who is in love with programming.
 							</h2>
 						</div>
@@ -60,7 +66,7 @@
                  </h2>
               </div> -->
 					</div>
-					<div class="icons  rellax" data-rellax-speed="-8">
+					 <div class="icons "><!-- rellax" data-rellax-speed="-5 -->
 						<a href="https://github.com/hkzone" target="_blank">
 							<i class="fab fa-github fa-2x"></i>
 						</a>
@@ -211,8 +217,8 @@
 								<span>Heroku</span>
 							</div>
 							<ul class="actions special">
-								<li><a href="#" class="button" target="_blank">Demo</a></li>
-								<li><a href="" class="button" target="_blank">Github</a></li>
+								<li><a href="https://patisserie-artisanale.herokuapp.com/" class="button" target="_blank">Demo</a></li>
+								<li><a href="https://github.com/hkzone/MaiiArtisan" class="button" target="_blank">Github</a></li>
 							</ul>
 						</div>
 					</article>
@@ -316,8 +322,8 @@
 								<span>NPM</span>
 							</div>
 							<ul class="actions special">
-								<li><a href="#" class="button" target="_blank">Demo</a></li>
-								<li><a href="#" class="button" target="_blank">Github</a></li>
+								<li><a href="#" class="button">Demo</a></li>
+								<li><a href="https://github.com/hkzone/Portfolio" class="button" target="_blank">Github</a></li>
 							</ul>
 						</div>
 					</article>
@@ -336,17 +342,17 @@
 						<div>
 							<div class="field">
 								<label for="name">Name</label>
-								<input type="text" name="name" id="name" />
+								<input type="text" name="name" id="name" required/>
 							</div>
 							<div class="field">
 								<label for="email">Email</label>
-								<input type="text" name="email" id="email" />
+								<input type="text" name="email" id="email" required/>
 							</div>
 						</div>
 						<div class="split">
 							<div class="field">
 								<label for="content">Message</label>
-								<textarea name="content" id="content" rows="3"></textarea>
+								<textarea name="content" id="content" rows="3" required></textarea>
 							</div>
 						</div>
 						<div class="send">
@@ -382,7 +388,9 @@
 
 	<script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
 	<script>
-		var rellax = new Rellax('.rellax');
+		var rellax = new Rellax('.rellax', {
+    breakpoints:[375, 768, 1201]
+  });
 	</script>
 </body>
 
