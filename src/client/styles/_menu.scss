@@ -7,13 +7,6 @@
   overflow: hidden;
 }
 
-.nav-alternate {
-  // color: $font-color-dark !important;
-  background-color: $menu-alternate-bg !important;
-  // backdrop-filter: blur(5px) !important;
-  @include easeOut();
-}
-
 .navbar {
   padding: 0 2rem 0 2rem;
   background: transparent;
@@ -24,7 +17,9 @@
   align-items: center;
   @include easeOut();
 
-  // padding: 0 20px 0 10px;
+  &.nav-alternate {
+    background-color: $menu-alternate-bg;
+  }
 
   .nav-branding {
     font-family: AMGaea, sans-serif;
