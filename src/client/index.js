@@ -41,9 +41,11 @@ window.addEventListener('DOMContentLoaded', async () => {
   // ********************* Change menu background color on scroll over content ******************** //
   document.addEventListener('scroll', () => {
     const title = document.querySelector('#title');
+    const about = document.querySelector('.about');
     const rect1 = navBar.getBoundingClientRect();
     const rect2 = title.getBoundingClientRect();
-    const overlap = !(rect1.bottom < rect2.top);
+    const rect3 = about.getBoundingClientRect();
+    const overlap = !(rect1.bottom < rect2.top && rect1.bottom < rect3.top);
     if (overlap && !navBar.classList.contains('nav-alternate')) {
       navBar.classList.add('nav-alternate');
     } else if (!overlap && navBar.classList.contains('nav-alternate'))
