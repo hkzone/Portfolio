@@ -14,7 +14,7 @@ My portfolio web-site, which I created with an aim to be modern&sleek looking. C
 - HTML / [SASS](https://sass-lang.com/)
 - [Serverless](https://www.serverless.com/)
 - [AWS SES](https://aws.amazon.com/ses/)
-- [Webpack 5](https://github.com/webpack/webpack)
+- [Webpack](https://github.com/webpack/webpack)
 
 ## Getting Started
 
